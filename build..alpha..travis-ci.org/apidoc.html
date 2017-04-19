@@ -1,0 +1,454 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/mnylen/pig"
+
+    >docker-pig (v0.5.0)</a>
+</h1>
+<h4>Docker container manager tool</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.docker-pig">module docker-pig</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">docker-pig.</span>cli</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">docker-pig.</span>config</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">docker-pig.</span>errors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">docker-pig.</span>helpers</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.docker-pig.cli">module docker-pig.cli</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-pig.cli.main">
+            function <span class="apidocSignatureSpan">docker-pig.cli.</span>main
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.docker-pig.config">module docker-pig.config</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-pig.config.fromFile">
+            function <span class="apidocSignatureSpan">docker-pig.config.</span>fromFile
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.docker-pig.errors">module docker-pig.errors</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-pig.errors.ConfigError">
+            function <span class="apidocSignatureSpan">docker-pig.errors.</span>ConfigError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-pig.errors.PigError">
+            function <span class="apidocSignatureSpan">docker-pig.errors.</span>PigError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.docker-pig.helpers">module docker-pig.helpers</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-pig.helpers.asyncIterate">
+            function <span class="apidocSignatureSpan">docker-pig.helpers.</span>asyncIterate
+            <span class="apidocSignatureSpan">(array, callback, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-pig.helpers.checkCreated">
+            function <span class="apidocSignatureSpan">docker-pig.helpers.</span>checkCreated
+            <span class="apidocSignatureSpan">(container, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.docker-pig.helpers.checkRunning">
+            function <span class="apidocSignatureSpan">docker-pig.helpers.</span>checkRunning
+            <span class="apidocSignatureSpan">(container, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.docker-pig" id="apidoc.module.docker-pig">module docker-pig</a></h1>
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.docker-pig.cli" id="apidoc.module.docker-pig.cli">module docker-pig.cli</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.docker-pig.cli.main" id="apidoc.element.docker-pig.cli.main">
+        function <span class="apidocSignatureSpan">docker-pig.cli.</span>main
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">main = function () {
+    try {
+        var cmdArgs = parseArgs(process.argv.slice(2))
+        main(cmdArgs, handleError)
+    } catch (err) {
+        handleError(err)
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.docker-pig.config" id="apidoc.module.docker-pig.config">module docker-pig.config</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.docker-pig.config.fromFile" id="apidoc.element.docker-pig.config.fromFile">
+        function <span class="apidocSignatureSpan">docker-pig.config.</span>fromFile
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromFile = function (file) {
+    var config = null
+
+    if (path.extname(file) === &#x27;.json&#x27;) {
+      config = fromJsonFile(file);
+    } else if (path.extname(file) === &#x27;.yml&#x27;) {
+      config = fromYamlFile(file);
+    } else {
+      throw new errors.ConfigError(&#x27;Unknown file format: &#x27; + file)
+    }
+
+    return resolveIncludes(config)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+}
+
+function loadConfiguration(){
+  if (fs.existsSync(&#x27;pig.json&#x27;) &#x26;&#x26; fs.existsSync(&#x27;pig.yml&#x27;)) {
+    throw new errors.ConfigError(&#x22;Can&#x27;t decide configuration file to load. Both pig.json and pig.yml present. Please remove
+ either one.&#x22;);
+  } else if (fs.existsSync(&#x27;pig.json&#x27;)) {
+    return require(&#x27;./config&#x27;).<span class="apidocCodeKeywordSpan">fromFile</span>(&#x27;pig.json&#x27;)
+  } else if (fs.existsSync(&#x27;pig.yml&#x27;)) {
+    return require(&#x27;./config&#x27;).fromFile(&#x27;pig.yml&#x27;)
+  } else {
+    throw new errors.ConfigError(&#x27;Could not find pig.json or pig.yml from current working directory.&#x27;)
+  }
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.docker-pig.errors" id="apidoc.module.docker-pig.errors">module docker-pig.errors</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.docker-pig.errors.ConfigError" id="apidoc.element.docker-pig.errors.ConfigError">
+        function <span class="apidocSignatureSpan">docker-pig.errors.</span>ConfigError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ConfigError(message) {
+    Error.call(this)
+    Error.captureStackTrace(this, this.constructor)
+
+    this.name = this.constructor.name
+    this.message = message
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  } else if (err) {
+      throw err
+  }
+}
+
+function loadConfiguration(){
+if (fs.existsSync(&#x27;pig.json&#x27;) &#x26;&#x26; fs.existsSync(&#x27;pig.yml&#x27;)) {
+  throw new errors.<span class="apidocCodeKeywordSpan">ConfigError</span>(&#x22;Can&#x27;t decide configuration file to load. Both
+ pig.json and pig.yml present. Please remove either one.&#x22;);
+} else if (fs.existsSync(&#x27;pig.json&#x27;)) {
+  return require(&#x27;./config&#x27;).fromFile(&#x27;pig.json&#x27;)
+} else if (fs.existsSync(&#x27;pig.yml&#x27;)) {
+  return require(&#x27;./config&#x27;).fromFile(&#x27;pig.yml&#x27;)
+} else {
+  throw new errors.ConfigError(&#x27;Could not find pig.json or pig.yml from current working directory.&#x27;)
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-pig.errors.PigError" id="apidoc.element.docker-pig.errors.PigError">
+        function <span class="apidocSignatureSpan">docker-pig.errors.</span>PigError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PigError(message) {
+    Error.call(this)
+    Error.captureStackTrace(this, this.constructor)
+
+    this.name = this.constructor.name
+    this.message = message
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    remainder: remainder,
+    options: { interactive: interactive, verbose: verbose, recreate: recreate },
+}
+}
+
+function getContainer(config, args) {
+if (!args.name) {
+    throw new errors.<span class="apidocCodeKeywordSpan">PigError</span>(&#x27;No container name given\n&#x27; + usage)
+}
+
+var container = config[args.name]
+if (container) {
+    return container
+} else {
+    throw new errors.PigError(&#x22;Container &#x27;&#x22; + args.name + &#x22;&#x27; not found&#x22;)
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.docker-pig.helpers" id="apidoc.module.docker-pig.helpers">module docker-pig.helpers</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.docker-pig.helpers.asyncIterate" id="apidoc.element.docker-pig.helpers.asyncIterate">
+        function <span class="apidocSignatureSpan">docker-pig.helpers.</span>asyncIterate
+        <span class="apidocSignatureSpan">(array, callback, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">asyncIterate = function (array, callback, done) {
+    function iterate(idx) {
+        var current = array[idx]
+
+        if (current) {
+            callback(current, function() { iterate(idx+1) }, function(err) { done(err) })
+        } else {
+            done()
+        }
+    }
+
+    iterate(0)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    stop(container, {removeStopped: true}, done)
+}
+
+function startDaemons(startOptions, done) {
+    done = done || _.noop
+
+    var daemons = _.filter(containers, { daemon: true })
+    helpers.<span class="apidocCodeKeywordSpan">asyncIterate</span>(daemons, function(container, next) {
+        start(container, [], startOptions, next)
+    }, done)
+}
+
+function stopDaemons(done) {
+    done = done || _.noop
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-pig.helpers.checkCreated" id="apidoc.element.docker-pig.helpers.checkCreated">
+        function <span class="apidocSignatureSpan">docker-pig.helpers.</span>checkCreated
+        <span class="apidocSignatureSpan">(container, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">checkCreated = function (container, callback) {
+    exec(&#x27;docker inspect &#x27; + container.name, function(err) {
+        var isCreated = err ? false : true
+        callback(isCreated)
+    })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    ports: []
+})
+
+process.chdir(container.pigdir)
+
+done = done || _.noop
+
+helpers.<span class="apidocCodeKeywordSpan">checkCreated</span>(container, function(isCreated) {
+    if (isCreated &#x26;&#x26; startOptions.recreate) {
+        stop(container, {removeStopped: true}, createAndStartContainer)
+    } else if (!isCreated) {
+        createAndStartContainer()
+    } else {
+        startContainer()
+    }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.docker-pig.helpers.checkRunning" id="apidoc.element.docker-pig.helpers.checkRunning">
+        function <span class="apidocSignatureSpan">docker-pig.helpers.</span>checkRunning
+        <span class="apidocSignatureSpan">(container, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">checkRunning = function (container, callback) {
+    exec(&#x27;docker inspect &#x27; + container.name, function(err, stdout) {
+        if (err) {
+            callback(false)
+        } else {
+            var info = _.head(JSON.parse(stdout))
+            var isRunning = info &#x26;&#x26; info.State ? !!info.State.Running : false
+            callback(isRunning)
+        }
+    })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+        function startContainer() {
+withHooks(container, function(done) {
+    startDeps(container, function(err) {
+        if (err) {
+            done(err)
+        } else {
+            helpers.<span class="apidocCodeKeywordSpan">checkRunning</span>(container, function(isRunning) {
+                if (isRunning) {
+                    done()
+                } else {
+                    dockerStart(done)
+                }
+            })
+        }
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
